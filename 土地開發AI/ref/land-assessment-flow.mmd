@@ -1,0 +1,86 @@
+---
+config:
+  layout: fixed
+---
+flowchart TB
+ subgraph Stage1["第一階段：識別土地身分"]
+        API{"串接  國土測繪圖資服務雲、地籍圖資網路便民服務系統 API 獲取資料"}
+        Input["輸入 地段、地號 資訊"]
+        Data["獲取：地籍資訊（地號、面積、坵形）、權利狀態（所有權、抵押設定）、土地使用分區、面積、（無法取得：建築線與地界）"]
+  end
+ subgraph Stage2["第二階段：基礎容積自動化"]
+        CityCheck{"判定縣市?"}
+        Auto["自動查詢：台南/高雄都市計畫分區系統"]
+        ManualVerify["人工校核：查閱《台南/高雄市都市計畫施行細則》"]
+        Manual["人工判讀：參考地方施行細則定性"]
+        BaseResult["產出：基礎容積率與建蔽率"]
+  end
+ subgraph Stage3["第三階段：土地潛力評估 / 容積獎勵"]
+        Mandatory["1. 必選：建築技術規則檢核"]
+        Classify{"2. 判讀獎勵路徑與分類"}
+        UR["都更路徑：上限為基準容積 50%"]
+        DH["危老路徑：上限為基準容積 40%"]
+        Design["設計路徑：開放空間、標章、公益設施"]
+        Policy["政策路徑：TOD 捷運、工業區更新"]
+        CeilingCheck["3. 獎勵總上限檢核：一般 20% / 危老 40% / 都更 50%"]
+        VolTransfer["4. 獨立計算項：容積移轉 (容移)"]
+        FinalBonus["產出：最終允許總容積率"]
+  end
+ subgraph Stage4["第四階段：投資 ROI 初估"]
+        FloorCalc["逐層拆解：計算總樓地板面積"]
+        MarketInput["輸入參數：總銷 (S)、成本 (C)、利潤 (P)"]
+        ROI["核心公式：L = S - (C + M + P)"]
+        Audit["法令核算與檢討 (OK/NG)"]
+  end
+ subgraph Reports["報告內容分頁"]
+        P1["分頁 1：基地基本資料與法令上限"]
+        Output["產生輸出報告"]
+        P2["分頁 2：面積計算明細表"]
+        P3["分頁 3：法令核算與檢討 OK/NG"]
+  end
+    Input --> API
+    API --> Data
+    Data --> CityCheck
+    CityCheck -- 台南/高雄 --> Auto
+    Auto --> ManualVerify
+    CityCheck -- 其他縣市 --> Manual
+    ManualVerify --> BaseResult
+    Manual --> BaseResult
+    BaseResult --> Mandatory
+    Mandatory --> Classify
+    Classify -- 都市更新 --> UR
+    Classify -- 危老重建 --> DH
+    Classify -- 建築設計/公益 --> Design
+    Classify -- 特殊政策 --> Policy
+    UR --> CeilingCheck
+    DH --> CeilingCheck
+    Design --> CeilingCheck
+    Policy --> CeilingCheck
+    CeilingCheck --> VolTransfer
+    VolTransfer --> FinalBonus
+    FinalBonus --> FloorCalc
+    FloorCalc --> MarketInput
+    MarketInput --> ROI
+    ROI --> Audit
+    Audit --> Output
+    Output --> P1 & P2 & P3
+    API -.-> n1@{ label: "<span class=\"text-only\" data-eleid=\"3\" style=\"white-space-collapse:\"># 全國土地使用分區資料查詢系統（內政部國土管理署城鄉發展署）</span><a rel=\"noopener\" class=\"link\" data-eleid=\"5\" data-lark-is-custom=\"false\" href=\"https://luz.tcd.gov.tw/web/Default.aspx\" data-lark-link=\"true\">https://luz.tcd.gov.tw/web/Default.aspx</a><ul class=\"richTextDocs-unOrderList\" data-eleid=\"6\"><li class=\"richTextDocs-listItem\" data-eleid=\"7\"><span class=\"text-only\" data-eleid=\"8\" style=\"white-space-collapse:\">都市計劃圖磚</span></li><li class=\"richTextDocs-listItem\" data-eleid=\"9\"><span class=\"text-only\" data-eleid=\"10\" style=\"white-space-collapse:\">都市計畫使用分區資訊</span></li><li class=\"richTextDocs-listItem\" data-eleid=\"11\"><span class=\"text-only\" data-eleid=\"12\" style=\"white-space-collapse:\">地籍資訊</span></li></ul><br><span class=\"text-only\" data-eleid=\"15\" style=\"white-space-collapse:\"># 地籍圖資便民服務系統</span><a rel=\"noopener\" class=\"link\" data-eleid=\"17\" data-lark-is-custom=\"false\" href=\"https://easymap.moi.gov.tw/Z10Web/Normal#\" data-lark-link=\"true\">https://easymap.moi.gov.tw/Z10Web/Normal#</a><ul class=\"richTextDocs-unOrderList\" data-eleid=\"18\"><li class=\"richTextDocs-listItem\" data-eleid=\"19\"><span class=\"text-only\" data-eleid=\"20\" style=\"white-space-collapse:\">地籍資訊</span></li><li class=\"richTextDocs-listItem\" data-eleid=\"21\"><span class=\"text-only\" data-eleid=\"22\" style=\"white-space-collapse:\">建物資訊</span></li><li class=\"richTextDocs-listItem\" data-eleid=\"23\"><span class=\"text-only\" data-eleid=\"24\" style=\"white-space-collapse:\">地籍轉座標（待串接）</span></li><li class=\"richTextDocs-listItem\" data-eleid=\"25\"><span class=\"text-only\" data-eleid=\"26\" style=\"white-space-collapse:\">門牌轉座標（待串接）</span></li></ul><br><span class=\"text-only\" data-eleid=\"29\" style=\"white-space-collapse:\"># 國土測繪圖資服務雲</span><a rel=\"noopener\" class=\"link\" data-eleid=\"31\" data-lark-is-custom=\"false\" href=\"https://maps.nlsc.gov.tw/T09/mapshow.action?language=ZH\" data-lark-link=\"true\">https://maps.nlsc.gov.tw/T09/mapshow.action?language=ZH</a><ul class=\"richTextDocs-unOrderList\" data-eleid=\"32\"><li class=\"richTextDocs-listItem\" data-eleid=\"33\"><span class=\"text-only\" data-eleid=\"34\" style=\"white-space-collapse:\">地籍圖磚</span></li></ul><br><span class=\"text-only\" data-eleid=\"37\" style=\"white-space-collapse:\"># 國家災害防救科技中心</span><a rel=\"noopener\" class=\"link\" data-eleid=\"39\" data-lark-is-custom=\"false\" href=\"https://dmap.ncdr.nat.gov.tw/1109/map/\" data-lark-link=\"true\">https://dmap.ncdr.nat.gov.tw/1109/map/</a><ul class=\"richTextDocs-unOrderList\" data-eleid=\"40\"><li class=\"richTextDocs-listItem\" data-eleid=\"41\"><span class=\"text-only\" data-eleid=\"42\" style=\"white-space-collapse:\">災害潛勢資訊</span></li></ul>" }
+
+    n1@{ shape: rect}
+     API:::Aqua
+     Input:::Peach
+     Data:::Sky
+     CeilingCheck:::Ash
+     n1:::Rose
+    classDef Aqua stroke-width:1px, stroke-dasharray:none, stroke:#46EDC8, fill:#DEFFF8, color:#378E7A
+    classDef Peach stroke-width:1px, stroke-dasharray:none, stroke:#FBB35A, fill:#FFEFDB, color:#8F632D
+    classDef Sky stroke-width:1px, stroke-dasharray:none, stroke:#374D7C, fill:#E2EBFF, color:#374D7C
+    classDef Rose stroke-width:1px, stroke-dasharray:none, stroke:#FF5978, fill:#FFDFE5, color:#8E2236
+    classDef Ash stroke-width:1px, stroke-dasharray:none, stroke:#999999, fill:#EEEEEE, color:#000000
+    style Auto fill:#e8f5e9,stroke:#2e7d32
+    style ManualVerify fill:#fff9c4,stroke:#fbc02d,stroke-width:2px
+    style Classify fill:#fff9c4,stroke:#fbc02d
+    style CeilingCheck fill:#ffecb3,stroke:#ffa000
+    style VolTransfer fill:#e1f5fe,stroke:#01579b,stroke-dasharray: 5 5
+    style Stage4 fill:#f1f8e9,stroke:#558b2f
+    linkStyle 28 stroke:#D50000,fill:none
