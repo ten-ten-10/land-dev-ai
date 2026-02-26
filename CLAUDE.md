@@ -147,6 +147,34 @@ A single land parcel evaluation requires cross-referencing cadastral data, urban
 └── user-feedback/ # User feedback collection
 ```
 
+### Engineering Repo — tomoland
+
+工程主倉庫：`https://github.com/tomoaid/tomoland.git`
+
+**技術棧**：Next.js (TypeScript) + FastAPI (Python) + PostgreSQL + pgvector + Celery + Redis + Docker/K8s
+
+**文件架構**：
+
+```
+docs/
+├── product/       # PM（@ten-ten-10）：prd.md, epics.md, product-brief.md, lean-canvas.md
+├── architecture/  # PM（@ten-ten-10）：architecture.md, land-assessment-flow.mmd
+│   └── adr/       # Tech Lead（@eric-tomoaid）：架構決策記錄
+├── design/        # Designer（@cave-tomo）：ux-design-specification.md
+├── specs/         # 工程師：API & 資料規格
+└── research/      # PM（@ten-ten-10）：domain-research.md, PDF 參考資料
+```
+
+**團隊分工（CODEOWNERS）**：
+
+| 路徑 | 負責人 |
+|---|---|
+| `docs/product/`, `docs/research/`, `docs/architecture/`, `docs/specs/` | @ten-ten-10（PM）|
+| `docs/architecture/adr/` | @eric-tomoaid（Tech Lead）|
+| `docs/design/`, `apps/web/` | @cave-tomo（Designer）|
+| `apps/api/` | @balafish @TomoAid-Victor @jordan-tomoaid |
+| `infra/` | @eric-tomoaid |
+
 ---
 
-*Last updated: 2026-02-24*
+*Last updated: 2026-02-26*
