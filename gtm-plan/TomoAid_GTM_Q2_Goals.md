@@ -28,18 +28,26 @@ flowchart LR
         C3["SaaaS\nAPI 文件 + 開發者頁"]
     end
 
-    subgraph G4["④ 品牌曝光起步"]
-        D1["LinkedIn 內容發布"]
-        D2["合作夥伴接洽"]
-        D3["Blog 發布 + 成效回顧"]
+    subgraph G4["④ AI 內容自動化系統"]
+        D1["GTM 主題庫\n+ Prompt Template"]
+        D2["Claude API\n內容生成腳本"]
+        D3["串接排程工具\n定期自動生成"]
+    end
+
+    subgraph G5["⑤ 品牌曝光渠道執行"]
+        E1["LinkedIn 內容發布"]
+        E2["合作夥伴接洽"]
+        E3["Blog 發布 + 成效回顧"]
     end
 
     DONE(["✅ Q2 完成"])
 
     G1 --> G2
     G2 --> G3
-    G3 --> G4
-    G4 --> DONE
+    G3 --> G5
+    G3 -.->|"並行"| G4
+    G4 --> G5
+    G5 --> DONE
 ```
 
 ---
@@ -79,14 +87,27 @@ flowchart LR
 
 ---
 
-### Goal 4：啟動品牌曝光渠道
-> 對應 GTM Playbook：Phase 0 — 品牌曝光渠道規劃（執行階段）
+### Goal 4：建立 AI 內容自動化系統
+> 對應 GTM Playbook：Phase 0 — AI 內容自動化工作流
+> ⚡ 與 Goal 3 並行執行
 
 | # | Key Activity | 期間 | Status |
 |---|--------------|------|--------|
-| 4.1 | LinkedIn 發布前 4 篇知識型內容（每週一篇） | 6/15–19 ⚠️ 6/19 放假 | Todo |
-| 4.2 | 接洽 1–2 個合作夥伴（產業協會 / KOL / 異業） | 6/22–26 | Todo |
-| 4.3 | 官網 Blog 發布 2 篇文章 + Q2 成效回顧 | 6/29–30 | Todo |
+| 4.1 | 整理 GTM 主題庫（JSON）+ 建立 Prompt Template | 5/25–29 | Todo |
+| 4.2 | 建立 Claude API 內容生成腳本（Level 1：半自動） | 6/1–5 | Todo |
+| 4.3 | 串接排程工具，實現每週自動生成草稿（Level 2） | 6/8–12 | Todo |
+
+---
+
+### Goal 5：啟動品牌曝光渠道執行
+> 對應 GTM Playbook：Phase 0 — 品牌曝光渠道規劃（執行階段）
+> 🤖 透過 Goal 4 建立的 AI 系統產出內容
+
+| # | Key Activity | 期間 | Status |
+|---|--------------|------|--------|
+| 5.1 | LinkedIn 發布前 4 篇知識型內容（透過 AI 系統產出） | 6/15–19 ⚠️ 6/19 放假 | Todo |
+| 5.2 | 接洽 1–2 個合作夥伴（產業協會 / KOL / 異業） | 6/22–26 | Todo |
+| 5.3 | 官網 Blog 發布 2 篇文章 + Q2 成效回顧 | 6/29–30 | Todo |
 
 ---
 
@@ -113,7 +134,7 @@ GitHub Repository（建議放於 tomoaid/tomoaid-web 或獨立 gtm repo）
 
 | Label | 用途 |
 |-------|------|
-| `goal-1` `goal-2` `goal-3` `goal-4` | 對應各 Goal |
+| `goal-1` `goal-2` `goal-3` `goal-4` `goal-5` | 對應各 Goal |
 | `tomoland` `tomohire` `saas` | 對應各產品 |
 | `activity` | Key Activity |
 | `blocker` | 阻塞項目 |
