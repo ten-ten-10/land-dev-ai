@@ -1,0 +1,261 @@
+{
+  "brand": "TomoAid",
+  "brand_voice": {
+    "tone": "親切、貼近人、強調夥伴關係，非冷硬技術感",
+    "core_message": "AI 不該只是少數人的技術，而應成為每個人都能運用的智慧助力",
+    "avoid": ["過度技術術語", "誇大承諾", "冷硬廣告語氣"]
+  },
+  "platforms": {
+    "linkedin": {
+      "format": "短段落、空行分隔、結尾附問句或 CTA",
+      "length": "150-300 字",
+      "hashtags": 3,
+      "best_content": ["觀點分享", "實戰心得", "數據洞察", "產品故事"]
+    },
+    "blog": {
+      "format": "標題 + 副標 + 段落 + 小結",
+      "length": "800-1500 字",
+      "seo_focus": true,
+      "best_content": ["深度教學", "案例分析", "產業趨勢"]
+    },
+    "threads": {
+      "format": "一句話觀點或短列點",
+      "length": "50-100 字",
+      "best_content": ["短觀點", "AI 小技巧", "產品動態"]
+    }
+  },
+  "content_pillars": [
+    {
+      "id": "pillar_ai_cowork",
+      "name": "AI Co-work 實戰",
+      "description": "展示如何用 AI 改變日常工作流程，建立 TomoAid 的實戰可信度"
+    },
+    {
+      "id": "pillar_industry_insight",
+      "name": "產業洞察",
+      "description": "針對 HR、建商、開發者分享產業觀點，建立思想領導力"
+    },
+    {
+      "id": "pillar_product_story",
+      "name": "產品故事",
+      "description": "用說故事方式介紹產品，強調解決真實痛點而非功能列表"
+    },
+    {
+      "id": "pillar_brand_why",
+      "name": "品牌 Why",
+      "description": "TomoAid 為什麼存在，團隊的使命與價值觀"
+    }
+  ],
+  "products": [
+    {
+      "id": "tomoland",
+      "name": "TomoLand",
+      "tagline": "AI 驅動的土地開發評估平台",
+      "target_personas": ["建商", "土地開發業者", "不動產投資人"],
+      "pain_points": [
+        "手動蒐集公開資訊耗時耗力",
+        "ROI 試算缺乏標準化工具",
+        "土地背景調查容易遺漏風險",
+        "案源管道分散，難以系統化管理"
+      ],
+      "usp": "AI 整合公開情報（法拍、公報）+ 自動 ROI 試算 + 土地背景調查，大幅縮短評估週期",
+      "topics": [
+        {
+          "id": "tl_001",
+          "title": "建商如何用 AI 把土地評估時間縮短 70%",
+          "pillar": "pillar_ai_cowork",
+          "platform": ["linkedin", "blog"],
+          "persona": "建商",
+          "hook": "一塊土地的評估，你的團隊平均花幾週？",
+          "key_points": [
+            "傳統流程：人工查地籍、手算 ROI、電話問仲介",
+            "AI 流程：自動抓公開情報 → 即時試算 → 風險標注",
+            "TomoLand 實際縮短評估週期的方式"
+          ],
+          "cta": "想看 Demo？留言或私訊我"
+        },
+        {
+          "id": "tl_002",
+          "title": "法拍屋值得買嗎？AI 幫你在 10 分鐘內算清楚",
+          "pillar": "pillar_product_story",
+          "platform": ["linkedin", "threads"],
+          "persona": "不動產投資人",
+          "hook": "法拍屋的坑，踩過才知道有多深。",
+          "key_points": [
+            "法拍屋常見風險：產權糾紛、地上物、欠繳費用",
+            "AI 可自動查哪些背景資料",
+            "10 分鐘初篩的實際流程"
+          ],
+          "cta": "你有遇過哪些法拍踩坑經驗？"
+        },
+        {
+          "id": "tl_003",
+          "title": "土地開發的 5 個致命盲點，90% 的建商都忽略了",
+          "pillar": "pillar_industry_insight",
+          "platform": ["blog", "linkedin"],
+          "persona": "建商",
+          "hook": "不是技術不夠好，是資訊蒐集的方式還停在 10 年前。",
+          "key_points": [
+            "盲點 1：只看現況，忽略施政建設計畫",
+            "盲點 2：地主資訊不完整就進入談判",
+            "盲點 3：ROI 試算沒有納入風險折扣",
+            "盲點 4：周邊市場調查仰賴仲介說詞",
+            "盲點 5：案源沒有系統化管理"
+          ],
+          "cta": "歡迎分享你的經驗"
+        }
+      ]
+    },
+    {
+      "id": "tomohire",
+      "name": "TomoHire",
+      "tagline": "AI 驅動的全流程人才招募系統",
+      "target_personas": ["HR 主管", "招募專員", "中小企業老闆"],
+      "pain_points": [
+        "每天花大量時間篩選不符合的履歷",
+        "主動尋源效率低，靠人力搜尋 104",
+        "面試問題千篇一律，無法個人化",
+        "候選人追蹤狀態散落各處"
+      ],
+      "usp": "自動爬取 104 VIP 履歷 + AI 評分契合度 + 個人化面試題生成，一站式全流程",
+      "topics": [
+        {
+          "id": "th_001",
+          "title": "HR 每天浪費 3 小時在這件事上，AI 可以幫你省回來",
+          "pillar": "pillar_ai_cowork",
+          "platform": ["linkedin"],
+          "persona": "HR 主管",
+          "hook": "你上次花超過 1 小時看一份不符合的履歷是什麼時候？",
+          "key_points": [
+            "平均 HR 每天花 2-3 小時在初篩履歷",
+            "AI 評分如何運作：JD × CV 契合度分析",
+            "節省下來的時間可以做什麼"
+          ],
+          "cta": "你們現在用什麼方式篩履歷？"
+        },
+        {
+          "id": "th_002",
+          "title": "為什麼主動尋源比等人投履歷更有效？",
+          "pillar": "pillar_industry_insight",
+          "platform": ["blog", "linkedin"],
+          "persona": "招募專員",
+          "hook": "最好的候選人，通常沒有在找工作。",
+          "key_points": [
+            "被動招募 vs 主動尋源的轉換率差異",
+            "AI 如何自動搜尋符合條件的候選人",
+            "主動尋源的正確姿勢"
+          ],
+          "cta": "想了解 TomoHire 怎麼做主動尋源？"
+        },
+        {
+          "id": "th_003",
+          "title": "用 AI 生成個人化面試題，讓每場面試都更有深度",
+          "pillar": "pillar_product_story",
+          "platform": ["linkedin", "threads"],
+          "persona": "HR 主管",
+          "hook": "「請問你的優缺點是什麼？」—— 這個問題已經死了。",
+          "key_points": [
+            "千篇一律的面試題讓優秀候選人失去興趣",
+            "根據 JD + 履歷生成個人化問題的邏輯",
+            "實際範例展示"
+          ],
+          "cta": "你最常用的面試題是什麼？"
+        }
+      ]
+    },
+    {
+      "id": "saas",
+      "name": "SaaaS",
+      "tagline": "AI Agent 時代的技術引擎平台",
+      "target_personas": ["AI 應用開發者", "技術主管", "新創 CTO"],
+      "pain_points": [
+        "自建 Scraping 不穩定，維護成本高",
+        "Embedding / RAG 難以快速整合進產品",
+        "中文語料處理效果差",
+        "從零建立 AI 技術棧耗費大量工程資源"
+      ],
+      "usp": "實戰驗證的技術模組（TomoLand 自用）、中文語料優化、快速整合 API",
+      "topics": [
+        {
+          "id": "ss_001",
+          "title": "什麼是 RAG？為什麼它讓 AI 不再亂說話",
+          "pillar": "pillar_ai_cowork",
+          "platform": ["blog", "linkedin"],
+          "persona": "AI 應用開發者",
+          "hook": "你有沒有遇過 AI 信誓旦旦說錯話的尷尬？",
+          "key_points": [
+            "RAG（檢索增強生成）的基本原理",
+            "為什麼純 LLM 會幻覺，RAG 如何解決",
+            "什麼場景適合用 RAG"
+          ],
+          "cta": "你們產品有用到 RAG 嗎？遇到什麼問題？"
+        },
+        {
+          "id": "ss_002",
+          "title": "自建爬蟲 vs 用現成服務，我們踩過的 3 個大坑",
+          "pillar": "pillar_product_story",
+          "platform": ["blog"],
+          "persona": "技術主管",
+          "hook": "我們花了 3 個月自建爬蟲，最後還是換掉了。",
+          "key_points": [
+            "坑 1：反爬機制一直在變，維護永無止境",
+            "坑 2：動態渲染頁面的處理成本",
+            "坑 3：規模化之後的穩定性問題",
+            "最後怎麼解決的"
+          ],
+          "cta": "你們爬蟲是自建還是用服務？"
+        },
+        {
+          "id": "ss_003",
+          "title": "Embedding 不是萬能的：中文向量搜尋踩坑指南",
+          "pillar": "pillar_industry_insight",
+          "platform": ["blog", "linkedin"],
+          "persona": "AI 應用開發者",
+          "hook": "同樣的模型，為什麼英文效果好、中文效果差？",
+          "key_points": [
+            "通用 Embedding 模型在中文上的限制",
+            "中文語料的特殊處理需求",
+            "選擇 Embedding 模型的實用標準"
+          ],
+          "cta": "有在做中文 NLP 的朋友，歡迎交流"
+        }
+      ]
+    },
+    {
+      "id": "tomoaid_brand",
+      "name": "TomoAid 母品牌",
+      "tagline": "以 AI 推動人類潛能",
+      "target_personas": ["企業決策者", "對 AI 感興趣的專業人士", "創業者"],
+      "topics": [
+        {
+          "id": "ta_001",
+          "title": "為什麼我們叫 TomoAid？品牌名字背後的故事",
+          "pillar": "pillar_brand_why",
+          "platform": ["linkedin"],
+          "persona": "廣泛受眾",
+          "hook": "Tomo 在日文是「朋友」，Aid 是「幫助」。",
+          "key_points": [
+            "品牌名稱的意涵：互助與連結",
+            "我們為什麼相信 AI 應該更貼近人",
+            "TomoAid 想解決的本質問題"
+          ],
+          "cta": "你希望 AI 幫你解決什麼問題？"
+        },
+        {
+          "id": "ta_002",
+          "title": "2026 年，AI 工具用得最好的人有什麼共同點",
+          "pillar": "pillar_ai_cowork",
+          "platform": ["linkedin", "threads"],
+          "persona": "企業決策者",
+          "hook": "不是最聰明的人，而是最懂得「借力」的人。",
+          "key_points": [
+            "AI 工具用得好的人如何定義任務邊界",
+            "人 + AI 協作的正確姿勢",
+            "TomoAid 觀察到的實際案例"
+          ],
+          "cta": "你現在最常用 AI 做什麼工作？"
+        }
+      ]
+    }
+  ]
+}
