@@ -24,26 +24,43 @@
       "best_content": ["短觀點", "AI 小技巧", "產品動態"]
     }
   },
+  "brand_positioning": "TomoAid 是幫助企業實現 AI 自動化改革的夥伴",
+  "content_principle": "內容目的不是教工具，而是堆疊「TomoAid 很懂 AI 自動化」的品牌印象。工具（Claude、n8n 等）只是結果導向故事裡的附帶說明，而非主角。",
   "content_pillars": [
     {
-      "id": "pillar_ai_cowork",
-      "name": "AI Co-work 實戰",
-      "description": "展示如何用 AI 改變日常工作流程，建立 TomoAid 的實戰可信度"
+      "id": "pillar_transformation_mindset",
+      "name": "AI 轉型思維",
+      "description": "幫助企業找到 AI 自動化的切入點，破解常見迷思，建立正確的轉型心態",
+      "ratio": "25%",
+      "core_question": "企業如何開始 AI 化？"
     },
     {
-      "id": "pillar_industry_insight",
-      "name": "產業洞察",
-      "description": "針對 HR、建商、開發者分享產業觀點，建立思想領導力"
+      "id": "pillar_workflow_case",
+      "name": "工作流改造案例",
+      "description": "以「原本要 X 時間，現在只要 Y 時間」的結果導向方式，展示真實流程改造",
+      "ratio": "30%",
+      "core_question": "真實的 AI 自動化流程長什麼樣？"
     },
     {
-      "id": "pillar_product_story",
-      "name": "產品故事",
-      "description": "用說故事方式介紹產品，強調解決真實痛點而非功能列表"
+      "id": "pillar_tool_tutorial",
+      "name": "工具實戰教學",
+      "description": "以 AI 工具（Claude、n8n 等）作為方法示範，重點在於解決問題的思路，而非工具本身",
+      "ratio": "20%",
+      "core_question": "怎麼做到的？"
+    },
+    {
+      "id": "pillar_industry_ai",
+      "name": "產業 AI 應用",
+      "description": "針對 HR、建商、開發者各自的 AI 自動化場景，建立垂直領域的專業形象",
+      "ratio": "15%",
+      "core_question": "我的行業怎麼用 AI？"
     },
     {
       "id": "pillar_brand_why",
       "name": "品牌 Why",
-      "description": "TomoAid 為什麼存在，團隊的使命與價值觀"
+      "description": "TomoAid 為什麼存在，創辦人觀點，我們看到的 AI 自動化未來",
+      "ratio": "10%",
+      "core_question": "TomoAid 是誰？"
     }
   ],
   "products": [
