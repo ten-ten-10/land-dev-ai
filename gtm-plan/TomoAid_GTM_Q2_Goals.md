@@ -19,13 +19,13 @@ flowchart LR
     subgraph G2["② GTM 定位完成"]
         B1["TomoLand 定位文件"]
         B2["TomoHire 定位文件"]
-        B3["SaaaS 定位文件"]
+        B3["TractionCore 定位文件"]
     end
 
     subgraph G3["③ Launch 交付物"]
         C1["TomoLand\nSales Deck + Demo"]
         C2["TomoHire\nLanding Page + Demo"]
-        C3["SaaaS\nAPI 文件 + 開發者頁"]
+        C3["TractionCore\nSales Deck + 服務頁"]
     end
 
     subgraph G4["④ AI 內容自動化系統"]
@@ -60,7 +60,7 @@ flowchart LR
 | # | Key Activity | 期間 | Status |
 |---|--------------|------|--------|
 | 1.1 | 完成品牌核對清單（VI 色系規範、Tone of Voice、品牌故事） | 4/13–17 | Todo |
-| 1.2 | 官網新增三個產品功能說明頁（TomoLand / TomoHire / SaaaS） | 4/20–24 | Todo |
+| 1.2 | 官網新增三個產品功能說明頁（TomoLand / TomoHire / TractionCore） | 4/20–24 | Todo |
 | 1.3 | 建立官網 Blog 架構 + LinkedIn 內容策略文件 | 4/27–5/1 ⚠️ 5/1 勞動節放假 | Todo |
 
 ---
@@ -72,7 +72,7 @@ flowchart LR
 |---|--------------|------|--------|
 | 2.1 | 完成 TomoLand 產品定位文件（含競品分析、Battlecard） | 5/4–8 | Todo |
 | 2.2 | 完成 TomoHire 產品定位文件（含競品分析、Battlecard） | 5/11–15 | Todo |
-| 2.3 | 完成 SaaaS 產品定位文件（含競品分析、Battlecard） | 5/18–22 | Todo |
+| 2.3 | 完成 TractionCore 服務定位文件（含競品分析、差異化主張） | 5/18–22 | Todo |
 
 ---
 
@@ -83,7 +83,7 @@ flowchart LR
 |---|--------------|------|--------|
 | 3.1 | TomoLand：Sales Deck + 產品 Demo 影片 + 定價表 | 5/25–29 | Todo |
 | 3.2 | TomoHire：Landing Page + 產品 Demo 影片 + Onboarding 文件 | 6/1–5 | Todo |
-| 3.3 | SaaaS：API 文件 + Quick Start 教學 + 開發者頁面 | 6/8–12 | Todo |
+| 3.3 | TractionCore：Sales Deck + 官網服務說明頁 + 企業診斷框架文件 | 6/8–12 | Todo |
 
 ---
 
@@ -135,7 +135,7 @@ GitHub Repository（建議放於 tomoaid/tomoaid-web 或獨立 gtm repo）
 | Label | 用途 |
 |-------|------|
 | `goal-1` `goal-2` `goal-3` `goal-4` `goal-5` | 對應各 Goal |
-| `tomoland` `tomohire` `saas` | 對應各產品 |
+| `tomoland` `tomohire` `tractioncore` | 對應各產品 |
 | `activity` | Key Activity |
 | `blocker` | 阻塞項目 |
 | `meeting-notes` | 週會紀錄 |
@@ -185,4 +185,4 @@ GitHub Repository（建議放於 tomoaid/tomoaid-web 或獨立 gtm repo）
 
 ---
 
-*Last updated: 2026-04-15*
+*Last updated: 2026-04-14*
